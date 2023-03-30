@@ -1,30 +1,51 @@
-// // richiesta
-// let promptString = prompt('inserisci parola palindroma');
+// richiesta
+let promptString = prompt('inserisci parola palindroma');
 
-// //creo funzione
-// function palindroma() {
-//     // converte string in array
-//     let string = promptString.split('');
+//creo funzione
+function palindroma() {
+    // converte string in array
+    let string = promptString.split('');
 
-//     // rovescia la string .creo una let
-//     let revString = string.reverse();
+    // rovescia la string .creo una let
+    let revString = string.reverse();
 
-//     // converto  string che era diventata array di nuovo in string. creo una let
-//     let newString = revString.join('');
+    // converto  string che era diventata array di nuovo in string. creo una let
+    let newString = revString.join('');
 
-//     // condizione
-//     if (newString == promptString) {
+    // condizione
+    if (newString == promptString) {
 
-//         prompt `la parola${promptString} è palindroma`;
-//     } else {
-//         prompt ` la parola ${promptString} non è palindroma`;
+        prompt `la parola${promptString} è palindroma`;
+    } else {
+        prompt ` la parola ${promptString} non è palindroma`;
 
-//     }
-// }
-// palindroma();
+    }
+}
+palindroma();
+// metodo2 palindroma
 
+let out1 = document.querySelector('.out1');
+let parola = document.querySelector('#parola');
+let btn1 = document.querySelector('.bottone').addEventListener('click', function () {
 
+    parola = document.querySelector('#parola').value;
+    let arrayString = parola.split('');
+    // let controllo = false
+    for (let i = 0; i < arrayString.length - 1; i++) {
+        let a = arrayString[i];
+        let b = arrayString[arrayString - 1-i];
+        if (b == a) {
+            out1.innerHTML += `<div>${parola}</div> è parola palindroma`;
+            controllo = true;
+        } else if (controllo=true) {
+            out1.innerHTML += `<div>${parola}</div> non è parola palindroma`;
 
+        }
+        // parola = (a==b)? out1.innerHTML += `<div>${parola}</div> è parola palindroma`:
+        // out1.innerHTML += `<div>${parola}</div> non è parola palindroma`;
+    }
+
+})
 
 
 
@@ -67,7 +88,7 @@ let btn = document.querySelector('.btn').addEventListener('click', function () {
     }
 
 
-})
+});
 
 
 
